@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Name of File?: " name
+
+file="$PWD/$name.doc"
+emacsbuffer="$PWD/#$name.doc#"
+
+touch $file
+emacs $file
+
+#Add functionality to move into folders rather than delete
+rm $file
+rm $emacsbuffer
