@@ -105,6 +105,8 @@ set $sub_main "2:"
 set $three "3:"
 set $coding "4:"
 set $lookup "5:"
+set $bookmark "6:"
+set $stickynote "7:"
 set $music "8:"
 set $flash_cards "10::Flash"
 set $waste "9:"
@@ -115,8 +117,8 @@ bindsym $mod+2 workspace $sub_main
 bindsym $mod+3 workspace $three
 bindsym $mod+4 workspace $coding
 bindsym $mod+5 workspace $lookup
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
+bindsym $mod+6 workspace $bookmark
+bindsym $mod+7 workspace $stickynote
 bindsym $mod+8 workspace $music
 bindsym $mod+9 workspace $waste
 bindsym $mod+0 workspace $flash_cards
@@ -129,8 +131,8 @@ bindsym $mod+Shift+2 move container to workspace $sub_main
 bindsym $mod+Shift+3 move container to workspace $three
 bindsym $mod+Shift+4 move container to workspace $coding
 bindsym $mod+Shift+5 move container to workspace $lookup
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+6 move container to workspace $bookmark
+bindsym $mod+Shift+7 move container to workspace $stickynote
 bindsym $mod+Shift+8 move container to workspace $music
 bindsym $mod+Shift+9 move container to workspace $waste
 bindsym $mod+Shift+0 move container to workspace $flash_cards
@@ -210,6 +212,10 @@ bindsym $mod+Shift+f exec google-chrome  --profile-directory="Default" --app="ht
 bindsym $mod+Shift+g exec google-chrome  --profile-directory="Default" --app="https://mail.google.com/mail/u/0/#inbox"
 #Open UBC Canvas
 bindsym $mod+Shift+h exec google-chrome  --profile-directory="Default" --app="https://canvas.ubc.ca/"
+#Open Netflix
+bindsym $mod+Shift+n exec google-chrome --profile-directory="Profile 2" --app="https://www.netflix.com/browse"
+#Amazon prime video
+bindsym $mod+Shift+p exec google-chrome --profile-directory="Default" --app="https://www.primevideo.com/"
 #Open Onenote
 bindsym $mod+Shift+o exec google-chrome --profile-directory="Default" --app="https://www.onenote.com/notebooks?wdorigin=ondcnotebooks&auth=1&nf=1&fromAR=1"
 
