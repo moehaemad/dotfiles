@@ -198,6 +198,7 @@ bindsym $mod+o exec i3-dmenu-desktop
 
 #If there's a second monitor (which I use at home) then connect it
 exec xrandr --output HDMI-0 --auto --right-of eDP-1-1
+#exec_always xrandr --output eDP-1-1 --auto --output HDMI-0 --auto --right-of eDP-1-1 --output DP-2 --auto --left-of eDP-1-1
 
 # Sreen brightness controls #TODO: ADD xrandr --output eDP-1-1 --brightness 0.8 after testing on
 #gateway laptop
