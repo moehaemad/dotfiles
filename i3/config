@@ -211,15 +211,16 @@ bindsym $mod+Shift+d exec google-chrome  --profile-directory="Default" --app="ht
 bindsym $mod+Shift+f exec google-chrome  --profile-directory="Default" --app="https://calendar.google.com/calendar/r#main_7"
 #Open Gmail
 bindsym $mod+Shift+g exec google-chrome  --profile-directory="Default" --app="https://mail.google.com/mail/u/0/#inbox"
-#Open UBC Canvas
-bindsym $mod+Shift+h exec google-chrome  --profile-directory="Default" --app="https://canvas.ubc.ca/"
 #Open Netflix
 bindsym $mod+Shift+n exec google-chrome --profile-directory="Profile 2" --app="https://www.netflix.com/browse"
 #Amazon prime video
 bindsym $mod+Shift+p exec google-chrome --profile-directory="Default" --app="https://www.primevideo.com/"
 #Open Onenote
 bindsym $mod+Shift+o exec google-chrome --profile-directory="Default" --app="https://www.onenote.com/notebooks?wdorigin=ondcnotebooks&auth=1&nf=1&fromAR=1"
-
+#Open todoist
+bindsym $mod+Shift+t exec todoist
+#Open asana
+bindsym $mod+Shift+a exec asana
 #Do screenshot to clipboard
 bindsym Print exec "maim  -c 1,0.412,0.706 -s  --format=png /dev/stdout | xclip -selection clipboard -t image/png -i"
 #Do screenshot to specific file ######################SHOULD CHANGE FOR FUTURE USE########################
