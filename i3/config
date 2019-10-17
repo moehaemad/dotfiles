@@ -229,4 +229,4 @@ bindsym $mod+Print exec "maim -s -c 0.259,0.957,0.91 ~/Pictures/Screenshot-$(dat
 assign [class="Rhythmbox"] $music
 assign [class="Spotify"] $music
 
-bindsym $mod+Shift+b exec touch ~/Documents/buffer.txt && emacs ~/Documents/buffer.txt && rm ~/Documents/buffer.txt && rm ~/Documents/'#buffer.txt#'
+bindsym $mod+Shift+b exec touch buffer.txt && emacs buffer.txt && rm buffer.txt && rm '#buffer.txt#'
