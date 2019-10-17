@@ -202,8 +202,8 @@ exec xrandr --output HDMI-0 --auto --right-of eDP-1-1
 
 # Sreen brightness controls #TODO: ADD xrandr --output eDP-1-1 --brightness 0.8 after testing on
 #gateway laptop
- bindsym XF86MonBrightnessUp exec xrandr eDP-1-1 --brightness 0.8 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 #Open google drive
 bindsym $mod+Shift+d exec google-chrome  --profile-directory="Default" --app="https://drive.google.com/drive/my-drive"
