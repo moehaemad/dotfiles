@@ -1,13 +1,14 @@
 #!/bin/bash
 
 #open up the music player RhythmBox in my case
-i3-msg 'workspace 8:; exec /usr/bin/rhythmbox' &&
+i3-msg 'workspace 8:; exec /usr/bin/rhythmbox'
 
 #open up a volume control panel
-i3-msg 'workspace 8:; exec /usr/bin/pavucontrol' &&
-
+i3-msg 'workspace 8:; exec /usr/bin/pavucontrol'
+sleep .1
 #split then merge the volume control with bluetooth control
-i3 split h &&
-i3 tabbed &&
+i3-msg '[class="Pavucontrol"]split h'
+
+i3-msg '[class="Pavucontrol"] layout tabbed'
 
 i3-msg 'workspace 8:; exec /usr/bin/blueman-manager'
