@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#NOTE: The IAM user creating the database must have the permissions attached to it
+
+#THIS IS FOR A FREE TIER EC2 DEPLOYMENT
+
+read -p "Database username: " USER
+
+read -p "Database password: " PASS
+
+eb create --database --database.engine postgres --database.instance db.t2.micro --database.password $PASS --database.size 10 --database.username $USER --database.version 11.6 --instance-types t2.micro --single
