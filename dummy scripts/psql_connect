@@ -1,0 +1,7 @@
+#!/bin/bash
+
+read -p "Enter Database Endpoint :" >> END
+reap -p "User: " >> USER
+read -p "Database Name: " >> DB
+
+psql --host=$END --port=5432 --username=$USER --password --dbname=$DB
