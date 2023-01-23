@@ -96,18 +96,18 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
+# focus the child container -- using FontAwesome for icons
 #bindsym $mod+d focus child
 set $workspacez ":Chrome"
 set $workspacex ":Temp"
-set $main "1:"
-set $sub_main "2:"
+set $main "1:"
+set $sub_main "2:"
 set $three "3:"
 set $coding "4:"
-set $lookup "5:"
+set $lookup "5:"
 set $bookmark "6:"
 set $stickynote "7:"
-set $music "8:"
+set $music "8:"
 set $flash_cards "10::Flash"
 set $waste "9:"
 
@@ -193,30 +193,40 @@ exec_always feh --bg-fill /home/mo/Pictures/wallhaven/wallhaven-701708.jpg
 #Enable transparency for the terminal
 exec_always compton --config ~/.config/compton/compton.conf
 
-#Template to get into multiple monitors xrandr --output HDMI-0 --auto --right-of eDP-1-1
+#Gives all install packages like through snap or available in gui with XFCE or whatever desktop installed
 bindsym $mod+o exec i3-dmenu-desktop
 
 #If there's a second monitor (which I use at home) then connect it
-exec xrandr --output HDMI-0 --auto --right-of eDP-1-1
-#exec_always xrandr --output eDP-1-1 --auto --output HDMI-0 --auto --right-of eDP-1-1 --output DP-2 --auto --left-of eDP-1-1
+#exec xrandr --output HDMI-0 --auto --right-of eDP-1-1
+exec_always xrandr --output HDMI-1-0 --auto --output DP-1-3 --auto --right-of HDMI-1-0 --output eDP-1 --auto --right-of DP-1-3
 
 # Sreen brightness controls #TODO: ADD xrandr --output eDP-1-1 --brightness 0.8 after testing on
 #gateway laptop
- bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
+#Set default google chrome profiles
+set $default_chrome "Default"
+set $arm_chrome "Profile 1"
+set $five_chrome "Profile 3"
+set $media_chrome "Profile 2" 
+
 #Open google drive
-bindsym $mod+Shift+d exec google-chrome  --profile-directory="Default" --app="https://drive.google.com/drive/my-drive"
+bindsym $mod+Shift+d exec google-chrome  --profile-directory=$default_chrome --app="https://drive.google.com/drive/my-drive"
 #Open google calendar
-bindsym $mod+Shift+f exec google-chrome  --profile-directory="Default" --app="https://calendar.google.com/calendar/r#main_7"
+bindsym $mod+Shift+f exec google-chrome  --profile-directory=$default_chrome --app="https://calendar.google.com/calendar/r#main_7"
 #Open Gmail
-bindsym $mod+Shift+g exec google-chrome  --profile-directory="Default" --app="https://mail.google.com/mail/u/0/#inbox"
-#Open Netflix
-bindsym $mod+Shift+n exec google-chrome --profile-directory="Profile 2" --app="https://www.netflix.com/browse"
+bindsym $mod+Shift+g exec google-chrome  --profile-directory=$default_chrome --app="https://mail.google.com/mail/u/0/#inbox"
+#Open Media profile
+bindsym $mod+Shift+m exec google-chrome --profile-directory=$media_chrome --new-window
+
+#Open Notion
+bindsym $mod+Shift+n exec google-chrome --profile-directory=$default_chrome --app="https://notion.so/"
+
 #Amazon prime video
-bindsym $mod+Shift+p exec google-chrome --profile-directory="Default" --app="https://www.primevideo.com/"
+bindsym $mod+Shift+p exec google-chrome --profile-directory=$default_chrome --app="https://www.primevideo.com/"
 #Open Onenote
-bindsym $mod+Shift+o exec google-chrome --profile-directory="Default" --app="https://www.onenote.com/notebooks?wdorigin=ondcnotebooks&auth=1&nf=1&fromAR=1"
+bindsym $mod+Shift+o exec google-chrome --profile-directory=$default_chrome --app="https://www.onenote.com/notebooks?wdorigin=ondcnotebooks&auth=1&nf=1&fromAR=1"
 #Open todoist
 bindsym $mod+Shift+t exec todoist
 #Open asana
