@@ -44,16 +44,16 @@ bindsym $mod+d exec dmenu_run
 
 #######################################################Changing the direction keys so it's easier to work
 #######################################################around other applications with same keystrokes
-set $letter_left j
-set $letter_down k
-set $letter_up l
-set $letter_right semicolon
+set $letter_left h
+set $letter_down j
+set $letter_up k
+set $letter_right l
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+$letter_left focus left
+bindsym $mod+$letter_down focus down
+bindsym $mod+$letter_up focus up
+bindsym $mod+$letter_right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -62,10 +62,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+$letter_left move left
+bindsym $mod+Shift+$letter_down move down
+bindsym $mod+Shift+$letter_up move up
+bindsym $mod+Shift+$letter_right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -74,7 +74,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -154,15 +154,15 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym $letter_left resize shrink width 5 px or 5 ppt
+        bindsym $letter_down resize grow height 5 px or 5 ppt
+        bindsym $letter_up resize shrink height 5 px or 5 ppt
+        bindsym $letter_right resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsymmove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move move            Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
