@@ -30,13 +30,17 @@ rxvt-unicode,
 neofetch,
 blueman,
 virtualbox,
-virtualbox-guest-additions-iso
+virtualbox-guest-additions-iso,
+ncal
 )
 
 #Download it, don't download, doesn't really matter :/
 snap_packages = (
 gotop
 )
+
+#Remove Ubuntu's bad snap package manager (Causes dependencies to break on packages and obliterated my previous desktop with help from nvidia drivers)
+sudo apt autoremove --purge snapd && sudo apt-mark hold snapd
 
 sudo add-apt-repository ppa:obsproject/obs-studio
 
