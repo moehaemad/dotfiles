@@ -48,9 +48,9 @@ default_chrome='Default'
 arm_chrome='Profile 1'
 
 #Move my quirks to local executable
-echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory="$default_chrome" --new-window" >> mob && chmod +x mob && sudo mv mob /usr/bin/
+echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory='"$default_chrome"' --new-window" >> mob && chmod +x mob && sudo mv mob /usr/bin/
 
-echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory="$arm_chrome" --new-window" >> mobb && chmod +x mobb && sudo mv mobb /usr/bin/
+echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory='"$arm_chrome"' --new-window" >> mobb && chmod +x mobb && sudo mv mobb /usr/bin/
 
 mkdir ~/.config/compton && ln -s compton/compton.conf ~/.config/compton/compton.conf
 
