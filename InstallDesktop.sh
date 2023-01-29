@@ -31,7 +31,9 @@ neofetch,
 blueman,
 virtualbox,
 virtualbox-guest-additions-iso,
-ncal
+cal,
+nginx,
+php
 )
 
 #Download it, don't download, doesn't really matter :/
