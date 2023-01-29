@@ -27,7 +27,10 @@ imagemagick,
 zsh,
 fonts-powerline,
 rxvt-unicode,
-neofetch
+neofetch,
+blueman,
+virtualbox,
+virtualbox-guest-additions-iso
 )
 
 #Download it, don't download, doesn't really matter :/
@@ -46,6 +49,9 @@ export EDITOR=vim
 
 default_chrome='Default'
 arm_chrome='Profile 1'
+
+#setup permissions for video group needed for light package
+usermod -aG video "$USER"
 
 #Move my quirks to local executable
 echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory='"$default_chrome"' --new-window" >> mob && chmod +x mob && sudo mv mob /usr/bin/
