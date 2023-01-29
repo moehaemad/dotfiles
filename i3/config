@@ -29,6 +29,11 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+set $TERMINAL urxvt
+
+#always reload urxvt config on i3 launch (not necessary but nice to have)
+exec_always xrdb ~/.Xresources
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -162,7 +167,7 @@ mode "resize" {
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
-        bindsymmove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move movemove move move            Up resize shrink height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
@@ -194,6 +199,12 @@ bar {
 		urgent_workspace #ae62bd #d0f4ea #3b1c32
 	}
 }
+
+#make default shell zsh
+exec_always chsh -s $(which zsh)
+
+#Make default editor vim
+exec_always export EDITOR=vim
 
 set $USER "scmoething"
 
@@ -255,7 +266,8 @@ bindsym $mod+Shift+a exec asana
 #Do screenshot to clipboard
 bindsym Print exec "maim  -c 1,0.412,0.706 -s  --format=png /dev/stdout | xclip -selection clipboard -t image/png -i"
 #Do screenshot to specific file ######################SHOULD CHANGE FOR FUTURE USE########################
-bindsym $mod+Print exec "maim -s -c 0.259,0.957,0.91 ~/Pictures/Screenshot-$(date +%x%s).png"
+
+bindsym $mod+Print exec "maim -s -c 0.259,0.957,0.91 ~/Pictures/Screenshot-$(date +%G-%m-%d-%H-%M-%S).png"
 
 assign [class="Rhythmbox"] $music
 assign [class="Spotify"] $music

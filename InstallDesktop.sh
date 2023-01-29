@@ -22,7 +22,12 @@ feh,
 maim,
 compton,
 figlet,
-lolcat
+lolcat,
+imagemagick,
+zsh,
+fonts-powerline,
+rxvt-unicode,
+neofetch
 )
 
 #Download it, don't download, doesn't really matter :/
@@ -37,6 +42,8 @@ for package in '${software[@]}'; do
 	sudo apt install -y -f "$package" || true
 done
 
+export EDITOR=vim
+
 default_chrome='Default'
 arm_chrome='Profile 1'
 
@@ -46,4 +53,23 @@ echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory="$default_chrome" --ne
 echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory="$arm_chrome" --new-window" >> mobb && chmod +x mobb && sudo mv mobb /usr/bin/
 
 mkdir ~/.config/compton && ln -s compton/compton.conf ~/.config/compton/compton.conf
+
+#Create symbolic links to all files
+rm "$HOME"/.bashrc | ln -s .bashrc "$HOME"/.bashrc
+ln -s .bash_aliases "$HOME"/.bash_aliases
+ln -s .vimrc "$HOME"/.vimrc
+ln -s .zshrc "$HOME"/.zshrc
+ln -s .Xresources "$HOME"/.Xresources #urxvt config
+mkdir "$HOME"/.config/urxvt/ && ln -s urxvt/ext
+xrdb "$HOME"/.Xresources #trigger config reload for urxvt
+
+#change default shell to zsh
+sudo chsh -s $(which zsh)
+
+#TODO: setup scheduled task to update zsh but download at first
+echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#TODO: add bash aliases as appended input to omyzshrc
+
+
 

@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
+#I3 and Personal configs
+
+export EDITOR=vim
+export TERMINAL=urxvt
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -131,3 +137,5 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+exec zsh
