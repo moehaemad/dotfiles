@@ -209,7 +209,7 @@ exec_always export EDITOR=vim
 set $USER "scmoething"
 
 #Lockscreen with fancy wallpaper
-bindsym Control+g exec i3lock -i ~/Pictures/LockPicture.png -t
+bindsym Control+g exec i3lock -i ~/Pictures/LockPicture.png -t -f
 
 #Pulse Audio Controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound

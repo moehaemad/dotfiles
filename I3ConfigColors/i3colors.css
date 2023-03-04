@@ -1,0 +1,112 @@
+/* ==================================================== */
+/* background */
+.single {
+    color: #000000
+}
+background2 {
+    color: #7a7a7a
+}
+/* ==================================================== */
+/* status line */
+.single {
+    color: #ffffff
+}
+statusLine2{
+    color: #000000
+}
+/* ===================================================== */
+/* separator */
+.single {
+    color: #666666
+}
+.separator {
+    color: #0f0f0f
+}
+
+/* ==================================================== */
+
+/* ===================focused workspace================ */
+
+.border {
+    color: #4c7899
+}
+.border2 {
+    color: #d0f4ea
+}
+/* ==================================================== */
+.background { 
+    color: #285577
+}
+.background2 {
+    color: #ae62bd
+}
+/* ==================================================== */
+.text {
+    color: #ffffff
+}
+.text2{
+    color: #3b1c32
+}
+/* ==================================================== */
+
+/* ===================active_workspace================= */
+.border {
+    color: #333333
+}
+.border2 {
+    color: #7e948e
+}
+.background {
+    color: #5f676a
+}
+.background2 {
+    color: #432649
+}
+.text {
+    color: #ffffff
+}
+.text2{
+    color: #91529e
+}
+
+/* inactive_workspace */
+.border {
+    color: #333333
+}
+.border2 {
+    color:  #4d5a56
+}
+.background {
+    color: #222222
+}
+.background2 {
+    color: #331d38
+}
+.text {
+    color: #888888
+}
+.text2 {
+    color: #6b3d75
+}
+
+/* urgent workspace */
+.border {
+    color: #2f343a
+}
+.background {
+    color: #900000
+}
+.text {
+    color: #ffffff
+}
+
+/* binding_mode */
+.border {
+    color: #2f343a
+}
+.background {
+    color: #900000
+}
+.text {
+    color: #ffffff
+}

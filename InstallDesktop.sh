@@ -33,7 +33,10 @@ virtualbox,
 virtualbox-guest-additions-iso,
 cal,
 nginx,
-php
+php,
+net-tools,
+ruby-full,
+okular
 )
 
 #Download it, don't download, doesn't really matter :/

@@ -3,3 +3,6 @@ I change my config files somewhat frequently so I want to keep them in a reposit
 
 # What my i3wm (i3 Window Manager) looks like(ish)
 ![terminalfun](terminalfun.png)
+
+## i3 makeup
+You can find all the pretty-fying I did for i3 in the I3ConfigColors
