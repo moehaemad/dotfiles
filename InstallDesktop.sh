@@ -54,6 +54,11 @@ for package in "${software[@]}"; do
 	sudo apt install -y -f "$package" || true
 done
 
+#refresh font cache for powerline fonts
+fc-cache -f -v
+#set ohmyzsh theme to agnoster because it makes me look like I know what I'm doing
+omz theme set agnoster
+
 export EDITOR=vim
 
 default_chrome='Default'

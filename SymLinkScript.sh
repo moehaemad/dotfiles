@@ -5,23 +5,31 @@ cd "$(dirname "$0")"
 
 echo "$(pwd)"
 
-HOME="$(dirname "$0")"
+#get original user login info that invoked script
+home="/home/"$(who am i | awk '{print $1}')""
+eval home_dir=$home
 
-mkdir "$HOME"/.config/compton && ln -s compton/compton.conf ~/.config/compton/compton.conf
+#Compton compositor - not publishing updates - new package (in beta with bugs)
+mkdir $home_dir/.config/compton && ln -sr compton/compton.conf $home_dir/.config/compton/compton.conf
 
-#Create symbolic links to all files
-rm "$HOME"/.bashrc && ln -s .bashrc "$HOME"/.bashrc
-rm "$HOME"/.bash_aliases && ln -s .bash_aliases "$HOME"/.bash_aliases
-ln -s .vimrc "$HOME"/.vimrc
-ln -s .zshrc "$HOME"/.zshrc
-ln -s .Xresources "$HOME"/.Xresources #urxvt config
-mkdir "$HOME"/.config/urxvt/ && ln -s urxvt/ext
-xrdb "$HOME"/.Xresources #trigger config reload for urxvt
+#CREATE SYMBOLIC LINKS TO ALL CONFIGS#
+
+#bash, vim, and urzvt (older terminal)
+rm $home_dir/.bashrc && ln -sr .bashrc $home_dir/.bashrc
+rm $home_dir/.bash_aliases || ln -sr .bash_aliases $home_dir/.bash_aliases
+ln -sr .vimrc $home_dir/.vimrc
+ln -sr .zshrc $home_dir/.zshrc
+ln -sr .Xresources $home_dir/.Xresources #urxvt config
+mkdir $home_dir/.config/urxvt/ && ln -sr urxvt/ext $home_dir/.config/urxvt/ext
+xrdb $home_dir/.Xresources #trigger config reload for urxvt
 
 #change default shell to zsh
 sudo chsh -s $(which zsh)
 
 #TODO: setup scheduled task to update zsh but download at first
+cd $home_dir
 echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+source $home_dir/.zshrc
+#append existing aliases into zshrc
+cat $home_dir/.bash_aliases >> .zshrc
 
-#TODO: add bash aliases as appended input to omyzshrc
