@@ -206,7 +206,7 @@ exec_always chsh -s $(which zsh)
 #Make default editor vim
 exec_always export EDITOR=vim
 
-set $USER "scmoething"
+set $USER "shamjam"
 
 #Lockscreen with fancy wallpaper
 bindsym Control+g exec i3lock -i ~/Pictures/LockPicture.png -t -f

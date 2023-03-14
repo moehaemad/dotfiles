@@ -33,3 +33,9 @@ source $home_dir/.zshrc
 #append existing aliases into zshrc
 cat $home_dir/.bash_aliases >> .zshrc
 
+#SETUP I3 CONFIG#
+#setup fonts
+cp fonts/fontawesome-free/otfs/*.otf /usr/local/share/fonts && fc-cache -f -v
+rm $home_dir/.config/i3/config && ln -sr i3/config $home_dir/.config/i3/config
+ln -sr i3/config $home_dir/.config/i3/i3status.conf
+
