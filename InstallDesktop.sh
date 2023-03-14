@@ -72,3 +72,4 @@ echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory='"$default_chrome"' --
 
 echo -e "#!/bin/bash\n\ngoogle-chrome --profile-directory='"$arm_chrome"' --new-window" >> mobb && chmod +x mobb && sudo mv mobb /usr/bin/
 
+sudo bash SymLinkScript.sh
