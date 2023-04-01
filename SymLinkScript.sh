@@ -27,7 +27,7 @@ xrdb $home_dir/.Xresources #trigger config reload for urxvt
 sudo chsh -s $(which zsh)
 
 #TODO: setup scheduled task to update zsh but download at first
-cd $home_dir
+cd $hme_dir
 echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 source $home_dir/.zshrc
 #append existing aliases into zshrc
@@ -38,4 +38,5 @@ cat $home_dir/.bash_aliases >> .zshrc
 cp fonts/fontawesome-free/otfs/*.otf /usr/local/share/fonts && fc-cache -f -v
 rm $home_dir/.config/i3/config && ln -sr i3/config $home_dir/.config/i3/config
 ln -sr i3/config $home_dir/.config/i3/i3status.conf
-
+omz theme set agnoster
+zsh
