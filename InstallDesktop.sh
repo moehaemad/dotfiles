@@ -41,7 +41,8 @@ okular
 
 #Download it, don't download, doesn't really matter :/
 snap_packages=(
-gotop
+gotop,
+intellij-idea-community --classic
 )
 
 #Remove Ubuntu's bad snap package manager (Causes dependencies to break on packages and obliterated my previous desktop with help from nvidia drivers)
