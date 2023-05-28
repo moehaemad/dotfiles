@@ -37,6 +37,7 @@ php
 net-tools
 ruby-full
 okular
+xclip
 )
 
 #Download it, don't download, doesn't really matter :/
@@ -54,6 +55,11 @@ for package in "${software[@]}"; do
 	#-f to force reinstall
 	sudo apt install -y -f "$package" || true
 done
+
+#TODO: fix this at some point or prompt with default link with idk some pgp signature if the download supports it
+echo "Need a link to download a .tar.gz file or .deb package install"
+echo "Discord, Intellij, DaVinciResolve ..."
+
 
 #refresh font cache for powerline fonts
 fc-cache -f -v
